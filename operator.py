@@ -54,3 +54,32 @@ print(10 < x and x < 20 and 20 < y) #False
 
 print(len('abc'))
 print(test('abc'))
+
+year = 1998
+if year < 1868:
+    print('江戸時代以前')
+elif 1868<= year < 1912:
+    print('明治時代')
+elif 1912<= year < 1926:
+    print('大正時代')
+elif 1926<= year < 1989:
+    print('昭和時代')
+elif 1989<= year < 2019:
+    print('平成時代')
+else:
+    print('令和時代')
+    
+
+#論理演算子
+is_like_baseball = True
+is_like_soccer = True
+is_like_tennis = False
+result = is_like_baseball and is_like_soccer
+print(result)#True
+
+result2 = is_like_baseball or is_like_tennis
+print(result2)#True
+
+result3 = is_like_baseball and is_like_tennis
+print(result3)#False
+
