@@ -25,6 +25,3 @@ print(now - datetime.timedelta(weeks=1 , days=3))
 diff =ten_days_later - now - datetime.timedelta(hours=2)
 print(diff)
 print(diff.days)
-
-
-
