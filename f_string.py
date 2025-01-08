@@ -1,3 +1,4 @@
+#f文字列 r文字列
 first_name = "Taro"
 last_name = "Yamada"
 
