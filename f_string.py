@@ -31,4 +31,10 @@ print(y.find('p')) #0
 print(y.index('p')) #0
 print(y.find('o', 7)) #11
 print(y.find('T'))#-1
-print(y.index('T'))#ValueError
+# print(y.index('T'))#ValueError
+
+#in演算子 大文字小文字を区別する
+a = 'Taro Yamada'
+print('Taro' in a) #True
+print('taro' in a) #False
+print('T' and 'Y' in a) #True
