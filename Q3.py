@@ -16,3 +16,6 @@ amount = input('お買上金額を入力してください。:')  # お買上金
 tax_rate = 0.1  # 消費税率
 is_food = input('以下の数値を入力してください。\n0) 食料品以外\n1) 食料品\n:')
 is_takeout = input('以下の数値を入力してください。\n0) 店内飲食\n1) 持ち帰り\n:')
+
+if is_food or is_takeout > 2:
+    print('不正な値です')
