@@ -17,5 +17,42 @@ tax_rate = 0.1  # 消費税率
 is_food = input('以下の数値を入力してください。\n0) 食料品以外\n1) 食料品\n:')
 is_takeout = input('以下の数値を入力してください。\n0) 店内飲食\n1) 持ち帰り\n:')
 
-if is_food or is_takeout > 2:
+
+if int(is_food) == 1 and int(is_takeout) == 1:
+    tax_rate = 0.08
+    print(int(amount) * (1 + tax_rate))
+if int(is_food) == 0 and int(is_takeout) == 0:
+    tax_rate = 0.1
+    print(int(amount) * (1 + tax_rate))
+if int(is_food) == 0 and int(is_takeout) == 1:
+    tax_rate = 0.1
+    print(int(amount) * (1 + tax_rate))
+if int(is_food) == 1 and int(is_takeout) == 0:
+    tax_rate = 0.1
+    print(int(amount) * (1 + tax_rate))
+if int(is_food) >= 2 or int(is_takeout) >= 2:
     print('不正な値です')
+
+
+
+    
+'''
+if is_food == '0':
+    pass
+elif is_food == '1':
+    is_takeout = input('以下の数値を入力してください。\n0) 店内飲食\n1) 持ち帰り\n:')
+    if is_takeout == '0':
+        pass
+    elif is_takeout == '1':
+        tax_rate = 0.08
+    else:
+        print('不正な値です')
+        exit()
+else:
+    print('不正な値です')
+    exit()
+    
+    
+total_amount = int(amount) * (1 + tax_rate)
+print(total_amount)
+'''

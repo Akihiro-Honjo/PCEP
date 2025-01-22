@@ -18,3 +18,9 @@ choice = input("pythonインタプリタを終了するコマンドを、選択�
                "3) close()\n"
                "4) break()\n"
                "数字を入力してください:")
+
+if choice == '1':
+    print('正解')
+else:
+    print('不正解')
+    
