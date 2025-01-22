@@ -9,6 +9,6 @@ cart = input("カート金額を入力してください。:")
 SHIPPING = 500  # 送料
 
 if int(cart) >= 6000:
-    print(cart)
+    print(f"お買上金額は{cart}円です")
 elif int(cart) < 6000:
-    print(int(cart) + 500)
+    print(f"お買上金額は{int(cart) + SHIPPING}円です")
