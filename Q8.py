@@ -19,8 +19,10 @@ choice = input("pythonインタプリタを終了するコマンドを、選択�
                "4) break()\n"
                "数字を入力してください:")
 
-if choice == '1':
-    print('正解')
+if  1 <= int(choice) <= 4:
+    if choice == '1':
+        print('正解')
+    else:
+        print('不正解')
 else:
-    print('不正解')
-    
+    print('1~4の数字を入力してください')
