@@ -22,3 +22,12 @@ Q9. お買い物付与ポイント判定プログラムプログラムを作成�
 browser_price = input("ブラウザからの購入金額を入力してください: ")
 appli_price = input("アプリからの購入金額を入力してください: ")
 has_credit_card = input("提携クレジットカードを所持していますか？(y/n): ")  # y でTrue, n でFalse
+
+if int(browser_price) < 10000:
+    print("0ポイント")
+if int(browser_price) >= 10000 and int(appli_price) == 0 and has_credit_card == 'n':
+    print(float(browser_price) * 0.01)
+if int(browser_price) >= 10000 and int(appli_price) >= 10000 and has_credit_card == 'n':
+    print(float(browser_price * 0.01) + float(appli_price * 0.02))
+if int(browser_price) >= 10000 and int(appli_price) >= 10000 and has_credit_card == 'y':
+    print(float(browser_price * 0.01) + float(appli_price * 0.02) + float(10000 * 0.03))

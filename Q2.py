@@ -7,5 +7,5 @@ Q2. 年収が扶養範囲内か判定するプログラムを作成してくだ�
 income = int(input("年収を入力してください。:"))
 if income <= 1030000:
     print('扶養範囲内です')
-elif income >1030000:
+else:
     print('扶養範囲外です')
