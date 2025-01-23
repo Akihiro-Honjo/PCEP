@@ -19,15 +19,44 @@ Q9. お買い物付与ポイント判定プログラムプログラムを作成�
     5,000円 x 1% + 5,000円 x 2% + 10,000 x 1% = 250ポイント となります。
 """
 
-browser_price = input("ブラウザからの購入金額を入力してください: ")
-appli_price = input("アプリからの購入金額を入力してください: ")
-has_credit_card = input("提携クレジットカードを所持していますか？(y/n): ")  # y でTrue, n でFalse
 
-if int(browser_price) < 10000:
-    print("0ポイント")
-if int(browser_price) >= 10000 and int(appli_price) == 0 and has_credit_card == 'n':
-    print(float(browser_price) * 0.01)
-if int(browser_price) >= 10000 and int(appli_price) >= 10000 and has_credit_card == 'n':
-    print(float(browser_price * 0.01) + float(appli_price * 0.02))
-if int(browser_price) >= 10000 and int(appli_price) >= 10000 and has_credit_card == 'y':
-    print(float(browser_price * 0.01) + float(appli_price * 0.02) + float(10000 * 0.03))
+
+'''
+browser_price = int(input("ブラウザからの購入金額を入力してください: "))
+appli_price = int(input("アプリからの購入金額を入力してください: "))
+
+total_price = browser_price + appli_price
+total_point = 0
+
+if total_price >= 10000:
+    has_credit_card = int(input("提携クレジットカードを所持していますか？(y/n): "))  # y でTrue, n でFalse
+    
+    browser_price = browser_price * 0.01
+    appli_price = appli_price * 0.02
+    credit_card_point = 0
+    
+    if has_credit_card.lower() == "y":
+        credit_card_point = total_price * 0.01
+    total_price = int(browser_price + appli_price + credit_card_point)
+    print(f"合計金額は{total_price}ポイントです。")
+'''
+
+
+browser_price = int(input("ブラウザからの購入金額を入力してください: "))
+appli_price = int(input("アプリからの購入金額を入力してください: "))
+total_price = browser_price + appli_price
+total_point = 0
+
+if total_price >= 10000:
+    has_credit_card = input("提携クレジットカードを所持していますか？(y/n): ")  # y でTrue, n でFalse
+
+    browser_point = browser_price * 0.01
+    appli_point = appli_price * 0.02
+    card_point = 0
+
+    if has_credit_card.lower() == "y":
+        card_point = total_price * 0.01
+    total_point = int(browser_point + appli_point + card_point)
+
+print(f"合計金額は{total_price:,}円です。ポイントは{total_point:,}ポイントです。")
+
