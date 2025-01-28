@@ -48,3 +48,39 @@ for _ in range(10):
 s = {1, 2, 3, 4, 5}
 print(s)
 print(list(s))
+
+#元のリストに追加したものを返す（元のリストは変わらない）
+list = ["apple", "banana", "orange"]
+neW_list = list + ["grape"]
+print(list+["grape"])
+print(list)
+print(neW_list)
+
+#元のリストに追加（元のリストが変わる）+=
+
+lst = ["a", "b", "c"]
+lst += ["d"]
+print(lst)
+print(lst*2) #繰り返し
+
+
+
+lst1 = [1, 2, 3]
+lst2 = [4, 5, 6]
+
+lst1.append(lst2) #末尾に要素を追加
+print(lst1)
+
+lst1.extend(lst2) #リストを拡張（結合）
+print(lst1)
+
+#指定した位置に要素を追加
+lst3 = [7, 8, 9]
+lst3.insert(0, '六') 
+print(lst3)
+
+#値を取り出す（リストからは削除される）（スクレイピングなどで使う）
+fruits = ['apple', 'banana', 'orange']
+banana = fruits.pop(1)
+print(banana)
+print(fruits)
