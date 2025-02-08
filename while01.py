@@ -11,3 +11,4 @@ while money >=price:
     money  -= price
     result = random.choice(["レア", "ノーマル", "スーパーレア"])
     print(result,f"残り金額は{money}円です。")
+    
