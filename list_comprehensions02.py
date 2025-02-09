@@ -21,3 +21,14 @@ my_dict = {num:("even" if num % 2 == 0 else "odd") for num in number_list }
 print(my_dict)
 
 #ネストした辞書内包表記を使用してリストの要素を辞書に変換する
+data = [
+    {"name":"John", "age":30, "city":"New York"},
+    {"name":"Mary", "age":20, "city":"Paris"},
+    {"name":"Joe", "age":25, "city":"London"}
+]
+
+data_dict = {
+    d["name"]: {k: v for k,v in d.items() if k !="name"} for d in data
+}
+
+print(data_dict)
