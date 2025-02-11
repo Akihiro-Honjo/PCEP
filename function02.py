@@ -11,7 +11,7 @@ print(result)
 
 import random
 
-def vending_machine(coin):
+def vending_machine(coin): #coinは仮引数:parameter
     """自動販売機関数"""
     if coin < 120:
         return "コインが足りません",coin
@@ -25,5 +25,5 @@ def vending_machine(coin):
     
     return "飲み物", coin-120, lottery 
 
-drink, change, lottery = vending_machine(150)
+drink, change, lottery = vending_machine(150) #ここの150は実引数:argument
 print(drink, change, lottery)
