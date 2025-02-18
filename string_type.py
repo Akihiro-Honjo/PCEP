@@ -8,6 +8,12 @@ print(s)
 ss = "これは\n改行を含む\n文字列です。\n"
 print(ss)
 
+a = "doesn't"
+b = 'doesn\'t'
+print(a)
+print(b)
+# a=b
+
 #Docstring(ドックストリング)
 #"""で囲われた文字列は関数やクラスの説明として使われる"
 def greet(name):
