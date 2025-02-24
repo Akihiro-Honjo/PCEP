@@ -35,3 +35,5 @@ print(slice_word) #cde
 #文字列abcdefgの場合に考え方
 #0 a 1 b 2 c 3 d 4 e 5 f 6 g 7
 #2～5までなのでcdeとなる
+#負数（マイナスの場合）
+#-7 a -6 b -5 c -4 d -3 e -2 f -1 g 0
