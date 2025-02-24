@@ -17,3 +17,8 @@ print('Name\tAddress\tAge\n'
 age = 40
 print("I'm" + str(age) + "years old")
 print(f"I'm {age}years old")
+
+
+s = 'First line . \n Second line'
+print(s)
+# \n 改行
