@@ -86,3 +86,65 @@ calc(3)は3の2乗、つまり9を返します。
 calc(2, 3) * calc(3)：2つのcalc関数の呼び出し結果（8と9）を掛け合わせています。結果は72です。
 print(...)：計算結果の72をコンソールに出力します。
 '''
+
+###12 B
+def greeting(*messages, **options ): 
+    for message in messages: 
+        print(message, **options) 
+greeting("Hello", "Good bye", end="! ")
+
+###13 A
+'''
+位置専用引数: /より前に定義された引数は、位置引数としてのみ指定可能
+キーワード専用引数: *より後に定義された引数は、キーワード引数としてのみ指定可能
+'''
+
+###14 C
+def greeting(*messages, to=None): 
+    pass
+
+###15
+
+
+###16 c
+address = ["hokkaido", "mie", "akita"] 
+address.sort(key=lambda s: len(s)) 
+print(address)
+'''
+文字数の少ない順に
+'''
+
+###18 C
+vegetables = ["tomato"] 
+vegetables.append("carrot") 
+vegetables.append("potato") #["tomato", "carrot", "potato"]
+vegetables.reverse() #["potato","carrot","tomato"]
+vegetables.pop() #["potato","carrot"]
+vegetables.pop() #["potato"]
+print(vegetables)
+'''
+POP()リストの末尾の要素を削除
+'''
+
+###19 B
+print([[3 * i + j + 1 for j in range(3)] for i in range(2)])
+
+###20
+odds = {3, 5, 7, 9, 11} 
+primes = {2, 3, 5, 7, 11}
+print(primes - odds, odds | primes)#{2} {2, 3, 5, 7, 9, 11}
+
+'''
+^ (排他的論理和): 両方の集合の要素のうち、どちらか一方にのみ含まれる要素の集合を返します。
+& (積集合): 両方の集合に共通して含まれる要素の集合を返します。
+| (和集合): 両方の集合に含まれるすべての要素の集合を返します。
+- (差集合): 左側の集合にのみ含まれ、右側の集合には含まれない要素の集合を返します。
+'''
+# A. ① primes ^ odds ② odds & primes {2, 9} {3, 5, 7, 11}
+print(f"A:" ,primes ^ odds,odds & primes)
+#B. ① primes ^ odds ② odds | primes {2, 9} {2, 3, 5, 7, 9, 11}
+print(f"B:",primes ^ odds, odds | primes)
+#C. ① primes - odds ② odds & primes {2} {3, 5, 7, 11}
+print(f"C:",primes - odds, odds & primes)
+#D. ① primes - odds ② odds | primes {2} {2, 3, 5, 7, 11}
+print(f"D:", primes - odds, odds | primes)
