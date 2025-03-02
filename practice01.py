@@ -55,7 +55,17 @@ text = (
     "-h help"
     "-v version"
 )
-print(text)
+print(f"第２章２:",text)
+
+text = (
+    "Usage: -h help -v version"
+)
+print(f"第2章2B:",text)
+
+text = (
+    "Usage:" "-h help" "-v version"
+)
+print(f"第2章2C:",text)
 
 #3 B D
 text3 = """spam
@@ -87,7 +97,15 @@ print(f"価格:{price:7d}")
 import math
 print(f"πの値はおよそ{math.pi:.5f}である")
 
+
 #9 C
+x = 300
+y = 150
+z = 200
+print("spam:{0}, ham:{1}, eggs:{2}" .format(x,y,z))
+#print("spam:{x}, ham:{y}, eggs{z}" .format(x,y,z))
+print("spam:{}, ham:{}, eggs:{}".format(x,y,z))
+print("spam:{a}, ham:{b}, eggs:{c}".format(a=x,b=y,c=z))
 
 #P67 第5章関数
 #1 C 〇

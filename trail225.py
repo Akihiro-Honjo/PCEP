@@ -148,3 +148,42 @@ print(f"B:",primes ^ odds, odds | primes)
 print(f"C:",primes - odds, odds & primes)
 #D. ① primes - odds ② odds | primes {2} {2, 3, 5, 7, 11}
 print(f"D:", primes - odds, odds | primes)
+
+
+###21 B
+'''
+A. {"carrot": 80, "tomato": 100}: これは、キーと値のペアを直接指定する、最も一般的なディクショナリの作成方法です。
+B. dict("carrot"=80, "tomato"=100): dict() コンストラクタでキーワード引数を使用する場合、キーワードは文字列ではなく、Pythonの識別子として扱われます。したがって、"carrot" のように引用符で囲むことはできません。正しい構文は dict(carrot=80, tomato=100) です。
+C. dict([("carrot", 80), ("tomato", 100)]): dict() コンストラクタに、キーと値のペアのタプルを含むリストを渡す方法です。
+D. {k: v for k, v in [("carrot", 80), ("tomato", 100)]}: これは、辞書内包表記を使用してディクショナリを作成する方法です。リスト内の各タプルからキーと値を取り出し、新しいディクショナリを作成します。
+'''
+
+###22 C
+vegetables = {0: "carrot", 1: "potato", 2: "tomato"} 
+for kv in  vegetables.items():
+    print(kv)
+#(0, 'carrot') 
+#(1, 'potato') 
+#(2, 'tomato')
+
+###23 B
+temp = 22 
+print( temp >= 10 or temp < 20)#True
+
+
+###24 B
+compare1 = "carrot" < "tomato" < "potato"
+compare2 = [3, 2] < [3, 1, 4] 
+compare3 = (3, 1) < (3, 1, -1) 
+print(compare1, compare2, compare3)
+#False False True
+'''
+①文字列は辞書順
+compare1 = "carrot" < "tomato" < "potato"はFalse
+②リストの比較
+compare2 = [3, 2] < [3, 1, 4] 0番目の3は同じ、1番目の2と1で比較
+False
+③タ
+プルの比較 要素数がことなる場合、要素数の少ないほうが、小さいと評価されます。
+compare3 = (3, 1) < (3, 1, -1) はTrue
+'''
