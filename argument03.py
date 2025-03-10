@@ -31,3 +31,19 @@ def sum_func(multi, *args, div=100):
 
 total = sum_func(10,1,2,3,4,5, div=10)
 print(total)
+
+###**kwargs キーワード引数の辞書
+def sample_func(**kwargs):
+    print(kwargs)
+    for key_word in kwargs:
+        if key_word == 'name':
+            print('name is', kwargs[key_word])
+sample_func(name='John', age=25, city='New York')
+sample_func(a=1, b=2, c=3)
+
+
+def sample_func2(*args, **kwargs):
+    kwargs['name'] = 'Bob'
+    print(kwargs)
+    
+    sample_func2(1,2,3, name='Alice', age=30, city='LA')
