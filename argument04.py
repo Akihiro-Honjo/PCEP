@@ -37,3 +37,25 @@ for student3 in student_dict:
     print_student3(**student3)
     
 
+###仮引数のアンパック
+def sum_func(*args):
+    print(args*2)
+    total = sum(args*2)
+    return total
+
+nums = [1, 2, 3, 4, 5]
+multi = sum_func(*nums)
+print(multi)
+
+def print_menu(**kwargs):
+    for dish, price in kwargs.items():
+        print(f'{dish}: {price} yen')
+
+#print_menu(ramen=800, curry=900, pasta=1000)
+
+menu = {
+    'ramen': 800,
+    'curry': 900,
+    'pasta': 1000
+    }
+print_menu(**menu)
