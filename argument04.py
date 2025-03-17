@@ -59,3 +59,26 @@ menu = {
     'pasta': 1000
     }
 print_menu(**menu)
+
+
+def create_profile(**kwargs):
+    print(kwargs)
+    # profile = {}
+    # for key, value in kwargs.items():
+    #     profile[key] = value
+    # return profile
+    return kwargs
+
+my_profile = create_profile(name='suzuki', email='test@test.com',age=20)
+
+def foo(first_arg, second_arg, *args, **kwargs):
+    print(first_arg)
+    print(second_arg)
+    print(args)
+    print(kwargs)
+
+# foo("first", "second", 1,2,3, a="apple", b="banana", c="cherry")
+my_tuple = (10, 20, 30, 40)
+my_dict = {'a': 'apple', 'b': 'banana', 'c': 'cherry'}
+foo("first", "second", *my_tuple, **my_dict)
+
