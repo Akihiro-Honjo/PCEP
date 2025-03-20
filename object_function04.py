@@ -31,3 +31,15 @@ words = ['apple', 'banana', 'cherry', 'fig', 'grape']
 sorted_words = sorted(words, key=by_last_letter)
 print(sorted_words)
 print(words)
+
+
+
+
+def count_up_to(max_number):
+    count = 0
+    while count <  max_number:
+        print(count)
+        yield count
+        count += 1   
+my_gen = count_up_to(7)
+print(list(my_gen))
