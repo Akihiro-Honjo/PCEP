@@ -51,5 +51,49 @@ Human.show_population() #クラスメソッド
 print("-" * 50)
 Human.say_hello(yamada)
 
+#hasattr
+print("*" * 50)
+print('name',hasattr(yamada, 'name')) #True
+print('say_hello', hasattr(yamada, 'say_hello')) #True
 
+#getattr オブジェクトの属性を取得する
+print("*" * 50)
+yamada_name = getattr(yamada, 'name')
+yamada_hello = getattr(yamada, 'say_hello')
+print(yamada_name)
+yamada_hello()
+
+
+#setattr オブジェクトの属性を設定する
+print("*" * 50)
+setattr(yamada, "address", "Tokyo")
+print(yamada.address)
+
+setattr(yamada,"say_bye", say_bye)
+yamada.say_bye()
+
+if not hasattr(yamada, "say_good_night"):
+    setattr(yamada, "say_good_night", lambda: print("Good night."))
+yamada.say_good_night()
+
+
+#引数としてインスタンスを渡す
+#関連したプロパティとメソッドをひとまとめにして持っている
+print("-" * 50)
+class Staff:
+    def __init__(self, name, position, salary):
+        self.name = name
+        self.position = position
+        self.salary = salary
+
+John = Staff("John", "課長", 500_000)
+Smith = Staff("Smith", "主任", 300_000)
+
+def work(work_name, work_time, staff):
+    print(f'{staff.name}は{work_name}を{work_time}時間しました。')
+    print(f"{staff.name}は{staff.position}で、給料は{staff.salary}円です。")
+    
+work("書類作成", 5, John)
+print()
+work("市場調査", 3, Smith)
 
