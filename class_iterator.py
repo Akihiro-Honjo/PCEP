@@ -41,6 +41,7 @@ class Itamae:
     
     def __iter__(self):
         return self
+    
     def __next__(self):
         #残金ないで握れるネタのリストを作る
         neta_list = [neta for neta in SUSHI_NETA 
