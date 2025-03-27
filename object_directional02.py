@@ -7,11 +7,13 @@
 
 ##スポーツ事務の顧客クラスの例
 class Customer:
-    def __init__(self, name, age, height, weight):
+    def __init__(self, name, age, height, weight, birthday):
         self.name = name
         self.age = age
         self.height = height
         self.weight = weight
+        self._birthday = self._set_birthday(birthday) #読み取り専用
+        
     
     @property
     def age(self):
@@ -46,8 +48,27 @@ class Customer:
         elif value < 0:
             raise ValueError("体重は正の値を入力してください。")
         self.weight = value
+    
+    @property
+    def bmi(self):
+        return self.weight / (self.height / 100) ** 2
+    
+    #birthday 読み取り専用
+    @property
+    def birthday(self):
+        return self._birthday #getter内では _ をつける
+    
+    def _set_birthday(self, value):
+        if not isinstance(value, int):
+            raise TypeError("誕生日は整数を入力してください。")
+        elif value > 31:
+            raise ValueError("31日以内で入力してください。")
+        return value
 
-yamada = Customer(name="Yamada Taro", age=30, height=174.5, weight=60)
-print(yamada.age, yamada.height, yamada.weight)
+yamada = Customer(name="Yamada Taro", age=30, height=174.5, weight=60, birthday=11)
+
+#yamada.birthday = 30 読み取り専用なのでエラーになる
+
+print(yamada.age, yamada.height, yamada.weight, yamada.birthday)
 #print(dir(yamada))
-
+print(yamada.bmi)
