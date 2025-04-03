@@ -58,3 +58,7 @@ animals =[
 
 animal = random.choice(animals)
 speak(animal("ハナコ"))
+
+
+
+
