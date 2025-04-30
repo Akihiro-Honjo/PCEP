@@ -100,3 +100,29 @@ hobby_list = ["読書", "水泳", "旅行"]
 personal_info = {"年齢": 25, "職業": "エンジニア"}
 
 profile("田中", *hobby_list, **personal_info)
+
+
+#36
+numbers = [5, 3, 5, 1, 3, 2, 4, 3, 4, 3]
+
+print(numbers.index(3), end=",") #最初から（インデックス0から）、3 を探す⇒1
+print(numbers.index(3, 2), end=",") #インデックス 2から最後まで の間で 3 を探す⇒4
+print(numbers.index(3, 5, 9), end=",") #インデックス **5以上9未満（つまり 5, 6, 7, 8）**の範囲で 3 を探す⇒7
+#list.index(value, start=0, stop=len(list))
+
+
+
+#37
+import re
+
+text = "Hello 2020 Python World Pytho"
+
+# \b は単語の境界を表す
+print(re.findall(r"\b\w", text)) #\w は単語文字（英数字とアンダースコア）を表す
+print(re.findall(r"\b\d.", text)) #\dは数字を表す .は任意の1文字を表す \dで最初の数字2を取り出し、.で次の文字0を取り出す
+print(re.findall(r"\bPython?", text)) #?は0回または1回の出現を表す
+print(re.findall(r"\bHe..|W.", text)) #..は任意の2文字を表す ||はorを表す
+
+print("--" * 20)
+text2 = "ABC abc Good Morning"
+print(re.findall(r"[A-Z]", text2)) #大文字のアルファベットを取り出す
