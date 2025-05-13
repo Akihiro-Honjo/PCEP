@@ -93,3 +93,31 @@ for e, j in zip(en, ja):
 print(l)
 
 # print([e, j for e, j in zip(en, ja)])
+
+
+#32
+num = 1
+
+def test1():
+    def test3():
+        nonlocal num
+        num = 3
+        
+    num = 5
+    test3()
+    print(num, end=',')
+    
+test1()
+print(num)
+
+
+#33
+class Test: 
+    num = 10
+
+def hello():
+    return "Hello, Python"
+
+test = Test()
+print(test.num)
+print(hello()) #print(test.hello()はエラーになる)
