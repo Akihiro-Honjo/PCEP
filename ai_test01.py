@@ -12,3 +12,17 @@ for i in range(3):
 
 text = "Python"
 print(text[::-1])
+
+
+
+print("-" *20)
+
+a = [1, 2, 3]
+b = a[:]
+b[0] = 100
+print(a)
+print(b)
+
+
+S = "Hello, world!"
+print(S[7:12])#スペースもインデックスに含まれる
